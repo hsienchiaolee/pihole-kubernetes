@@ -20,11 +20,11 @@ spec:
   externalTrafficPolicy: {{ .Values.serviceWeb.externalTrafficPolicy }}
   {{- end }}
   ports:
-    - port: 80
+    - port: {{ .Values.webHttp }}
       targetPort: http
       protocol: TCP
       name: http
-    - port: 443
+    - port: {{ .Values.webHttps }}
       targetPort: https
       protocol: TCP
       name: https
